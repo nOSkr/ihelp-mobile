@@ -14,7 +14,8 @@ import { useSWRToken } from "../hooks/useSWRToken";
 import { Auth } from "../models/Auth";
 import { authMe } from "../store/authSlice";
 import { AuthApi } from "../apis";
-import LoginScreen from "../screens/auth/LoginScreen";
+import PublicScreen from "../screens/auth/PublicScreen";
+import PersonLoginScreen from "../screens/auth/PersonLoginScreen";
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -64,7 +65,8 @@ function RootNavigator() {
           screenOptions={{
             headerTitleStyle: styles.headerTitle,
           }}>
-          <Stack.Screen component={LoginScreen} name="LoginScreen" options={{ headerShown: false }} />
+          <Stack.Screen component={PublicScreen} name="PublicScreen" options={{ headerShown: false }} />
+          <Stack.Screen component={PersonLoginScreen} name="PersonLoginScreen" options={{ headerShown: false }} />
         
         </Stack.Group>
       )}
